@@ -3,9 +3,11 @@ Explore 2 dataset that given then finding descriptive statistics and summary res
 
 ### Answer
 
-1.) From survey, most students use left hand writing.
+1.) หาค่าเฉลี่ยการเต้นของหัวใจ (Pulse) ของทั้งผู้ชายและผู้หญิง และหาว่ามีค่าเฉลี่ยต่างกันเท่าไหร่
 ```{R}
-Code here
+avgFemalePulse <- mean(survey$Pulse[survey$Sex == "Female"],na.rm = TRUE) #75.12632
+avgMalePulse <- mean(survey$Pulse[survey$Sex == "Male"],na.rm = TRUE) #73.19792
+avgFemalePulse - avgMalePulse #1.928399
 ```
 
 2.) Descriptive statistics Statement
