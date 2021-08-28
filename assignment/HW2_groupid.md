@@ -24,9 +24,11 @@ mean(cats$Hwt[cats$Sex == 'F'] , na.rm = TRUE) #9.202128
 ```{R}
 max(survey$Height[survey$Age> 19], na.rm = TRUE) #196
 ```
-5.) 
+5.) หาค่าเฉลี่ย Bwt แมวตัวเมียและตัวผู้ จากนั้นหาว่าต่างกันเท่าไหร่
 ```{R}
-Code here
+maleWt <- mean(cats$Bwt[cats$Sex == 'M'] , na.rm = TRUE) #2.9
+femaleWt <- mean(cats$Bwt[cats$Sex == 'F'] , na.rm = TRUE) #2.359574
+maleWt - femaleWt #0.5404255
 ```
 
 
