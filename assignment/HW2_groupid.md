@@ -12,6 +12,18 @@ Code here
 ```{R}
 Code here
 ```
+3.) 
+```{R}
+Code here
+```
+4.) 
+```{R}
+Code here
+```
+5.) 
+```{R}
+Code here
+```
 
 
 ### Team:016-ใจเกเร
