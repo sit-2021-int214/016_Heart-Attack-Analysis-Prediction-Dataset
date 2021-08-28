@@ -20,9 +20,9 @@ AgeF - AgeM # 0.07557627
 ```{R}
 mean(cats$Hwt[cats$Sex == 'F'] , na.rm = TRUE) #9.202128
 ```
-4.) 
+4.) หาค่าความสูงที่มากที่สุด ของนักเรียนที่มีอายุมากกว่า 19 ปี
 ```{R}
-Code here
+max(survey$Height[survey$Age> 19], na.rm = TRUE) #196
 ```
 5.) 
 ```{R}
