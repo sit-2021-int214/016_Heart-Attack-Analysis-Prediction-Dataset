@@ -18,7 +18,7 @@ AgeF - AgeM # 0.07557627
 ```
 3.) หาค่าเฉลี่ย Hwt ของแมวตัวเมีย
 ```{R}
-CatsF <- mean(cats$Hwt[cats$Sex == 'F'] , na.rm = TRUE) #9.202128
+mean(cats$Hwt[cats$Sex == 'F'] , na.rm = TRUE) #9.202128
 ```
 4.) 
 ```{R}
