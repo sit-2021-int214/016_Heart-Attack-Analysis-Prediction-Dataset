@@ -9,7 +9,7 @@ Datasets from: [NAME](link)
 
 ## About Us
 งานนี้เป็นส่วนของวิชา INT214 Statistics for Information technology <br/> ภาคเรียนที่ 1 ปีการศึกษา 2564 คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
-### Team: nameXXXXXX
+### Team: name ใจเกเร
 1.  จิรสิน  ฉัตร์บรรยงค์  StudentID: 63130500011
 2.  ทรรศภูมิ  คงนิธิเฉลิม StudentID: 63130500044
 3.  ธนกฤต แคนขา StudentID: 63130500045
