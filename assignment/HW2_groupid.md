@@ -16,9 +16,9 @@ AgeF <- mean(survey$Age[survey$Sex == 'Female'] , na.rm = TRUE) # 20.40753
 AgeM <- mean(survey$Age[survey$Sex == 'Male'] , na.rm = TRUE) # 20.33196
 AgeF - AgeM # 0.07557627
 ```
-3.) 
+3.) หาค่าเฉลี่ย Hwt ของแมวตัวเมีย
 ```{R}
-Code here
+CatsF <- mean(cats$Hwt[cats$Sex == 'F'] , na.rm = TRUE) #9.202128
 ```
 4.) 
 ```{R}
