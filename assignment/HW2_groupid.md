@@ -10,9 +10,11 @@ avgMalePulse <- mean(survey$Pulse[survey$Sex == "Male"],na.rm = TRUE) #73.19792
 avgFemalePulse - avgMalePulse #1.928399
 ```
 
-2.) Descriptive statistics Statement
+2.) หาค่าเฉลี่ยของอายุ ของทั้งผู้ชาย และผู้หญิง และหาว่ามีมีค่าเฉลี่ยต่างกันเท่าไหร่
 ```{R}
-Code here
+AgeF <- mean(survey$Age[survey$Sex == 'Female'] , na.rm = TRUE) # 20.40753
+AgeM <- mean(survey$Age[survey$Sex == 'Male'] , na.rm = TRUE) # 20.33196
+AgeF - AgeM # 0.07557627
 ```
 3.) 
 ```{R}
