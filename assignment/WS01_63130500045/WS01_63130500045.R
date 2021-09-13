@@ -4,6 +4,8 @@ library(dplyr)
 
 # Explore
 
+sat <-  read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/SAT_original.csv")
+
 # xxxx
 
 
@@ -42,3 +44,13 @@ duplicated()
 #assertive package
 assert_is_numeric()
 assert_all_are_in_closed_range()
+
+# 1. dim(sat)
+
+# 2. sat %>% filter(duplicated(sat))
+
+# 3. sat_dis <- sat %>% distinct()
+#    View(sat_dis)
+
+
+
