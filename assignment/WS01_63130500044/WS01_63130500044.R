@@ -6,6 +6,19 @@ library(dplyr)
 sat <-  read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/SAT_original.csv%22)
 # xxxx
 
+#How many observation of this dataset
+glimpse(sat)
+View(sat)
+
+
+#1.How many observation of this dataset (before cleaning) ?
+
+#2.Are there duplicate data sets ? (If have duplicate data, list the data that duplicate)
+sat %>% filter(duplicated(sat))
+
+#3.How many distinct school in this dataset ? (Know after drop duplicate data)
+sat_dis <- sat %>% distinct()
+View(sat_dis)
 
 
 # USEFUL FUNCTION (After finished please remove it) -------------------------
