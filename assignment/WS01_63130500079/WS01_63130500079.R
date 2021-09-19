@@ -32,4 +32,21 @@ quantile(sat$writing_score,na.rm = T)
 # --------------------------------------------------------------------
 #5  What is min, max, average, quartile of total score in SAT ?
 
+
 #6  Which school is get highest SAT score ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
