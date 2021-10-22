@@ -17,4 +17,16 @@ length(which(is.na(heart)))
 #Chagne 0 to feamale and 1 to male
 heart$sex[heart$sex == 0] <- "female"
 heart$sex[heart$sex == 1] <- "male"
-heart$sex
+
+#Remove unused columns
+##Remove oldpeak columns
+heart$oldpeak <- NULL
+##Remove slp columns
+heart$slp <- NULL
+##Remove thall columns
+heart$thall <- NULL
+
+#Export to CSV
+write.csv(heart,"C:\\Users\\Neko7687\\Desktop\\214\\016_Heart-Attack-Analysis-Prediction-Dataset\\team-assignment\\midterm\\Cleaning Data\\heart-attack-cleaning.csv")
+
+
