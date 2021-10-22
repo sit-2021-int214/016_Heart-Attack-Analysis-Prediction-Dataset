@@ -1,5 +1,5 @@
-##Exploration Data
-###Step 0 : Add Library
+## Exploration Data
+### Step 0 : Add Library
 ```r
 library(stringr)
 library(readr)
