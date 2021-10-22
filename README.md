@@ -50,8 +50,8 @@ Heart Attack Analysis Prediction Dataset เป็นชุดข้อมูล
 
 ### Important Files in Repository
 - [Heart Attack Analysis Prediction Dataset Original](./team-assignment/midterm/Data%20Exploration/heart-attack-analysis-prediction-dataset.csv): Original Dataset
-- [Heart Attack Analysis Prediction Dataset]() : Exploratory Data Analysis
-- [Heart Attack Analysis Prediction Dataset Clean](): Clean Dataset
+- [Heart Attack Analysis Prediction Dataset](./team-assignment/midterm/Data%20Exploration/data%20exploration.R) : Exploratory Data Analysis
+- [Heart Attack Analysis Prediction Dataset Clean](./team-assignment/midterm/Cleaning%20Data/heart-attack-analysis-prediction-dataset.csv): Clean Dataset
 ### References
 - [Heart Attack Analysis & Prediction Dataset](https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
 
@@ -63,7 +63,7 @@ Heart Attack Analysis Prediction Dataset เป็นชุดข้อมูล
 3.  ธนกฤต แคนขา StudentID: 63130500045
 4.  นฤเบศร์ ภัทรสัญญา StudentID: 63130500068
 5.  ปรียาทร ไชยคำ StudentID: 63130500079
-6.  
+
 ### Instructor
 - ATCHARA TRAN-U-RAIKUL
 - JATAWAT XIE (Git: [safesit23](https://github.com/safesit23))
