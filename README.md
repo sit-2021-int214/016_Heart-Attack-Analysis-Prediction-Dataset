@@ -42,16 +42,16 @@ Heart Attack Analysis Prediction Dataset เป็นชุดข้อมูล
 2. R Studio Desktop
 
 ## Table of Contents
-1. [Exploratory Data Analysis]()
-2. [Data Cleaning]()
-3. [Define Question and Data Analysis]()
+1. [Exploratory Data Analysis](./team-assignment/midterm/Data%20Exploration)
+2. [Data Cleaning](./team-assignment/midterm/Cleaning%20Data)
+3. [Define Question and Data Analysis](./team-assignment/midterm)
 
 ## Resources
 
 ### Important Files in Repository
-- [](): Original Dataset
-- []() : Exploratory Data Analysis
-- [](): Clean Dataset
+- [Heart Attack Analysis Prediction Dataset Original](./team-assignment/midterm/Data%20Exploration/heart-attack-analysis-prediction-dataset.csv): Original Dataset
+- [Heart Attack Analysis Prediction Dataset]() : Exploratory Data Analysis
+- [Heart Attack Analysis Prediction Dataset Clean](): Clean Dataset
 ### References
 - [Heart Attack Analysis & Prediction Dataset](https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
 
