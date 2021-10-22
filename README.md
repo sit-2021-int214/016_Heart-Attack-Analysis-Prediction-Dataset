@@ -29,7 +29,6 @@ Datasets from: [Heart Attack Analysis Prediction Dataset](https://www.kaggle.com
 3.  ธนกฤต แคนขา StudentID: 63130500045
 4.  นฤเบศร์ ภัทรสัญญา StudentID: 63130500068
 5.  ปรียาทร ไชยคำ StudentID: 63130500079
-6.  
 ### Instructor
 - ATCHARA TRAN-U-RAIKUL
 - JATAWAT XIE (Git: [safesit23](https://github.com/safesit23))
