@@ -51,7 +51,7 @@ Heart Attack Analysis Prediction Dataset เป็นชุดข้อมูล
 ### Important Files in Repository
 - [Heart Attack Analysis Prediction Dataset Original](./team-assignment/midterm/Data%20Exploration/heart-attack-analysis-prediction-dataset.csv): Original Dataset
 - [Heart Attack Analysis Prediction Dataset](./team-assignment/midterm/Data%20Exploration/data%20exploration.R) : Exploratory Data Analysis
-- [Heart Attack Analysis Prediction Dataset Clean](./team-assignment/midterm/Cleaning%20Data/heart-attack-analysis-prediction-dataset.csv): Clean Dataset
+- [Heart Attack Analysis Prediction Dataset Clean](./team-assignment/midterm/Cleaning%20Data/heart-attack-cleaning.R): Clean Dataset
 ### References
 - [Heart Attack Analysis & Prediction Dataset](https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
 
