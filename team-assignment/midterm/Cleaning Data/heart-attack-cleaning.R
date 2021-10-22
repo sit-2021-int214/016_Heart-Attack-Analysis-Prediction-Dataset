@@ -27,6 +27,6 @@ heart$slp <- NULL
 heart$thall <- NULL
 
 #Export to CSV
-write.csv(heart,"C:\\Users\\Neko7687\\Desktop\\214\\016_Heart-Attack-Analysis-Prediction-Dataset\\team-assignment\\midterm\\Cleaning Data\\heart-attack-cleaning.csv")
+write.csv(heart,".\heart-attack-cleaning.csv")
 
 
