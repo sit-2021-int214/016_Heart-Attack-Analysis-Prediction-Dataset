@@ -13,7 +13,8 @@ heart <- heart %>% distinct()
 #Check NA
 length(which(is.na(heart)))
 
-#
+#Change datatype Numberic to Charactors 
+#Chagne 0 to feamale and 1 to male
 heart$sex[heart$sex == 0] <- "female"
 heart$sex[heart$sex == 1] <- "male"
 heart$sex
