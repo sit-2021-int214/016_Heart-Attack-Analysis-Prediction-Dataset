@@ -3,7 +3,7 @@
 **Created by Thanakrit Cankha (ID: 63130500011)**
 
 Choose Dataset:
-Superstore Sales Dataset (Data from Rohit Sahoo,[Kaggle](https://www.kaggle.com/rohitsahoo/sales-forecasting)) >> [Using CSV](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/superstore_sales.csv)
+Top 270 Computer Science / Programing Books (Data from Thomas Konstantin, [Kaggle](https://www.kaggle.com/thomaskonstantin/top-270-rated-computer-science-programing-books)) >> [Using CSV](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv)
 
 ### Outlines
 1. Explore the dataset
@@ -22,7 +22,7 @@ library(assertive)
 library(ggplot2)
 
 # Dataset
-store <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/superstore_sales.csv");
+topComBooks <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/superstore_sales.csv");
 
 glimpse(store);
 ```
@@ -49,7 +49,7 @@ $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14
 
 1.ตรวจว่าข้อมูลใน Dataset มีตัวที่ค่าเป็น null หรือไม่
 ```
-is.na(topBook) %>% table()
+is.na(topComBooks) %>% table()
 ```
 Result:
 ```
@@ -58,7 +58,7 @@ FALSE
 ```
 2.สรุปข้อมูลของ Dataset เบื้องต้น
 ```
-topBook %>% select(-Book_title, -Description, -Type,) %>% summary()
+topComBooks %>% select(-Book_title, -Description, -Type,) %>% summary()
 
 ```
 Result:
@@ -75,7 +75,7 @@ Result:
 
 - Function `select()` from package [dplyr](https://dplyr.tidyverse.org/reference/select.html). : เลือกเฉพาะคอมลัมน์ที่เราต้องการให้แสดงผลออกมา
 ```
-topBook %>% select(Book_title,Price,Rating)
+topComBooks %>% select(Book_title,Price,Rating)
 ```
 Result:
 ```
@@ -95,7 +95,7 @@ Result:
 ```
 - Function `filter()` from package [dplyr](https://dplyr.tidyverse.org/reference/filter.html). : เลือกเฉพาะข้อมูลที่ตรงกับเงื่อนไขที่เรากำหนด
 ```
-topBook %>% select(Book_title,Price) %>% filter(Price > 30)
+topComBooks %>% select(Book_title,Price) %>% filter(Price > 30)
 ```
 Result:
 ```
@@ -115,7 +115,7 @@ Result:
 
 - Function `arrange()` from package [dplyr](https://dplyr.tidyverse.org/reference/arrange.html). : เรียงข้อมูลจากน้อยไปมากตามคอลัมน์ที่กำหนด
 ```
-topBook %>% select(Book_title,Rating) %>% arrange(Rating)
+topComBooks %>% select(Book_title,Rating) %>% arrange(Rating)
 ```
 Result:
 ```
@@ -136,52 +136,110 @@ Result:
 
 ## Part 3: Transform data with dplyr and finding insight the data
 
-### 1.
+### 1. จำนวนหนังสือของแต่ละประเภทโดยเรียงจากน้อยไปมาก
 ```
+topComBooks %>% count(Type) %>% arrange(n)
 ```
 Result:
 ```
+  Type                      n
+  <chr>                 <int>
+1 Boxed Set - Hardcover     1
+2 Unknown Binding           2
+3 ebook                     7
+4 Kindle Edition           10
+5 Hardcover                95
+6 Paperback               156
 ```
 
 
-### 2. 
+### 2.  หนังสือที่มีราคาถูกที่สุด
 ```
+topComBooks %>% select(-Description) %>% filter(Price == min(Price)) 
 ```
 Result :
 ```
+  Rating Reviews Book_title            Number_Of_Pages Type      Price
+   <dbl>   <dbl> <chr>                           <dbl> <chr>     <dbl>
+1   4.17    3829 The Elements of Style             105 Hardcover  9.32
 ```
 
 
-### 3. 
+### 3. ค่าเฉลี่ยราคาของหนังสือในแต่ละประเภท
 
 ```
+topComBooks%>% group_by(Type) %>% summarise(mean_price = mean(Price))
 ```
 Result :
 ```
+  Type                  mean_price
+  <chr>                      <dbl>
+1 Boxed Set - Hardcover      220. 
+2 ebook                       51.4
+3 Hardcover                   70.1
+4 Kindle Edition              32.4
+5 Paperback                   45.8
+6 Unknown Binding             37.2
 ```
 
 
-### 4. 
+### 4.  ราคาของ 10 อันดับหนังสือที่มี Rating ดีที่สุด
 ```
+topComBooks %>% select(Book_title,Rating,Price) %>% arrange(desc(Rating)) %>% head(n=10)
 ```
 Result :
 ```
+   Book_title                                                                                               Rating Price
+   <chr>                                                                                                     <dbl> <dbl>
+ 1 Your First App: Node.js                                                                                    5     25.9
+ 2 The Art of Computer Programming, Volumes 1-4a Boxed Set                                                    4.77 220. 
+ 3 Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems   4.72  45.6
+ 4 Build Web Applications with Java: Learn every aspect to build web applications from scratch                4.67  42.3
+ 5 Fluent Python: Clear, Concise, and Effective Programming                                                   4.67  64.1
+ 6 ZX Spectrum Games Code Club: Twenty fun games to code and learn                                            4.62  14.6
+ 7 The Linux Programming Interface: A Linux and Unix System Programming Handbook                              4.62  46.4
+ 8 CLR via C# (Developer Reference)                                                                           4.58  66.3
+ 9 The Elements of Computing Systems: Building a Modern Computer from First Principles                        4.54  41.3
+10 Practical Object Oriented Design in Ruby                                                                   4.54  50.1
 ```
 
-
-### 5. 
+### 5. 5 อันดับหนังสือที่มีราคาน้อยกว่าค่าเฉลี่ยของราคาหนังสือทุกเล่ม
 ```
+topComBooks %>% filter(Price < mean(Price)) %>% select(Book_title, Price) %>% arrange(desc(Price)) %>% head(n=5) 
 ```
 Result :
 ```
+  Book_title                                                                                     Price
+  <chr>                                                                                          <dbl>
+1 Assembly Language: Step-By-Step                                                                 53.9
+2 Android NDK Game Development Cookbook                                                           53.4
+3 Data Structures and Algorithms                                                                  53.2
+4 Quantum Computing Since Democritus                                                              52.9
+5 Continuous Delivery: Reliable Software Releases Through Build, Test, and Deployment Automation  52.5
 ```
 
 
-### 6. 
+### 6. หนังสือที่มีการ Reviews มากกว่า 1000 โดยเรียงจากมากไปน้อย
 ```
+topComBooks %>% filter(Reviews > 1000) %>% select(Reviews,Book_title,Price) %>% arrange(desc(Reviews))
 ```
 Result :
 ```
+   Reviews Book_title                                                                                Price
+     <dbl> <chr>                                                                                     <dbl>
+ 1    5938 Start with Why: How Great Leaders Inspire Everyone to Take Action                         14.2 
+ 2    3829 The Elements of Style                                                                      9.32
+ 3    2629 The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win              24.3 
+ 4    2290 The Goal: A Process of Ongoing Improvement                                                37.1 
+ 5    2093 Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy    14.5 
+ 6    2092 The Innovators: How a Group of Hackers, Geniuses and Geeks Created the Digital Revolution 17.2 
+ 7    1817 Algorithms to Live By: The Computer Science of Human Decisions                            14.4 
+ 8    1658 Ghost in the Wires: My Adventures as the World's Most Wanted Hacker                       12.9 
+ 9    1406 The Information: A History, a Theory, a Flood                                             11   
+10    1325 How Google Works                                                                          13.2 
+11    1268 The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography          19.1 
+12    1255 Superintelligence: Paths, Dangers, Strategies                                             15.7 
+13    1035 Chaos: Making a New Science                                                               25.7 
 ```
 
 ## Part 4: Visualization with GGplot2
