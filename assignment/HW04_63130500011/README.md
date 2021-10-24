@@ -1,6 +1,6 @@
 # R-Assignment 4
 
-**Created by Thanakrit Cankha (ID: 63130500011)**
+**Created by Jirasin Chatbanyong (ID: 63130500011)**
 
 Choose Dataset:
 Top 270 Computer Science / Programing Books (Data from Thomas Konstantin, [Kaggle](https://www.kaggle.com/thomaskonstantin/top-270-rated-computer-science-programing-books)) >> [Using CSV](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv)
@@ -243,16 +243,19 @@ Result :
 ```
 
 ## Part 4: Visualization with GGplot2
-### 1. 
+### 1. ข้อมูลแต่ละประเภทของหนังสือ มีจำนวนเท่าไหร่
 ```
+topComBooks %>% ggplot(aes(x=Type)) + geom_bar() + ggtitle("Number of type book")
 ```
 Result:
 ![Graph 1]()
 
 
 
-### 2.
+### 2. กราฟแสดงความสัมพันธ์ระหว่าง Rating และ Price ที่ต่ำกว่าค่าเฉลี่ย
 ```
+topComBooks %>% filter(Price < mean(Price)) %>% ggplot(aes(x=Price,y=Rating))+ geom_point() +
+  geom_point(aes(color=Type))+ ggtitle("Relation between Rating and Price less than mean") + geom_smooth()
 ```
 Result:
 ![Graph 2]()
