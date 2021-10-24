@@ -248,7 +248,7 @@ Result :
 topComBooks %>% ggplot(aes(x=Type)) + geom_bar() + ggtitle("Number of type book")
 ```
 Result:
-![Graph 1]()
+![Graph 1](Garph1)
 
 
 
@@ -258,6 +258,6 @@ topComBooks %>% filter(Price < mean(Price)) %>% ggplot(aes(x=Price,y=Rating))+ g
   geom_point(aes(color=Type))+ ggtitle("Relation between Rating and Price less than mean") + geom_smooth()
 ```
 Result:
-![Graph 2]()
+![Graph 2](Garph2)
 
 
