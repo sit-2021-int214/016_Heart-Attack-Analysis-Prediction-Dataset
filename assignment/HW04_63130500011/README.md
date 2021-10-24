@@ -25,7 +25,6 @@ library(ggplot2)
 store <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/superstore_sales.csv");
 
 glimpse(store);
-
 ```
 ข้อมูลภายใน Dataset
 ```
@@ -38,7 +37,6 @@ $ Description     <chr> "This style manual offers practical advice on improving 
 $ Number_Of_Pages <dbl> 105, 527, 50, 393, 305, 288, 256, 368, 259, 128, 352, 352, 200, 328, 240, 288, 392, 304, 336, 542, 192, 242, 224, 412,~
 $ Type            <chr> "Hardcover", "Hardcover", "Kindle Edition", "Hardcover", "Kindle Edition", "Paperback", "Hardcover", "Hardcover", "Har~
 $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14.188235, 14.232353, 14.364706, 14.502941, 14.641176, 15.229412~
-
 ```
 ภายใน dataset ประกอบไปด้วยข้อมูลจำนวน 271 Row และ 7 Columns โดยที่
 - Rating : คะแนนหนังสือ
@@ -52,13 +50,11 @@ $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14
 ### 1.ตรวจว่าข้อมูลใน Dataset มีตัวที่ค่าเป็น null หรือไม่
 ```
 is.na(topBook) %>% table()
-
 ```
 Result:
 ```
 FALSE 
  1897 
- 
 ```
 ### 2.สรุปข้อมูลของ Dataset เบื้องต้น
 ```
@@ -74,7 +70,6 @@ Result:
  Mean   :4.067   Mean   : 185.6   Mean   : 475.1   Mean   : 54.542  
  3rd Qu.:4.250   3rd Qu.: 116.5   3rd Qu.: 572.5   3rd Qu.: 67.854  
  Max.   :5.000   Max.   :5938.0   Max.   :3168.0   Max.   :235.650  
- 
 ```
 ## Part 2: Learning function from Tidyverse
 
@@ -97,88 +92,65 @@ books %>% arrange(Price)
 
 ### 1.
 ```
-
 ```
 Result:
-
 ```
-
 ```
 
 
 ### 2. 
-
 ```
-
 ```
 Result :
-
 ```
-
 ```
 
 
 ### 3. 
 
 ```
-
 ```
 Result :
-
 ```
-
 ```
 
 
 ### 4. 
 ```
-
 ```
-
 Result :
-
+```
 ```
 
-```
+
 ### 5. 
-
 ```
-
 ```
 Result :
-
+```
 ```
 
-```
+
 ### 6. 
-
 ```
-
 ```
 Result :
-
 ```
-
 ```
 
 ## Part 4: Visualization with GGplot2
 ### 1. 
 ```
-
 ```
 Result:
-
 ![Graph 1]()
 
 
 
 ### 2.
 ```
-
 ```
 Result:
-
 ![Graph 2]()
-
 
 
