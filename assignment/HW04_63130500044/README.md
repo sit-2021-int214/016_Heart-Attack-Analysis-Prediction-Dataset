@@ -96,3 +96,5 @@ Result:
 10 BH-11710    Brosina Hoffman 115.   Los Angeles    
 # … with 9,790 more rows
 ```
+
+##Part 3: Transform data with dplyr and finding insight the data
