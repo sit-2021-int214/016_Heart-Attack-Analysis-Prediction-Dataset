@@ -52,7 +52,7 @@ starwars %>% mutate(height_m = height / 100)
 
 ## Part 3: Transform data with dplyr and finding insight the data
 
-1. 5 อันดับแรกของหนังสือประเภท "Hardcover" ที่มีจำนวนการ Reviews มากที่สุด
+### 1. 5 อันดับแรกของหนังสือประเภท "Hardcover" ที่มีจำนวนการ Reviews มากที่สุด
 
 ```
 topComputerBooks %>% filter(Type == "Hardcover") %>% arrange(desc(Reviews)) %>% head(n=5) %>% select(-Rating, -Number_Of_Pages, -Description, Rating)
@@ -75,7 +75,7 @@ Result:
 - กำหนดการเรียงลำดับจำนวนการ Review จากมากไปน้อย โดยใช้คำสั่ง arrange()
 - กำหนดจำนวนลำดับของผลลัพธ์ที่ต้องการเป็น 5 โดยใช้ head()
 
-2. หนังสือมีหน้ามากกว่่า 150 หน้า แต่ไม่เกิน 300 หน้า
+### 2. หนังสือมีหน้ามากกว่่า 150 หน้า แต่ไม่เกิน 300 หน้า
 
 ```
 topComputerBooks %>% arrange(Number_Of_Pages) %>% filter(Number_Of_Pages > 150 & Number_Of_Pages < 300) %>%
@@ -104,7 +104,7 @@ Result:
 - arrange() จะเป็นการเรียงลำดับ โดย default จะเป็นการเรียงค่าจากน้อยไปมาก
 - ตั้งเงื่อนไขของ Number_Of_Pages โดยให้มีค่าอยู่ระหว่าง มากกว่า 150 และ น้อยกว่า 300
 
-3. หนังสือมีราคามากกว่าค่าเฉลี่ยของราคาหนังสือทั้งหมด
+### 3. หนังสือมีราคามากกว่าค่าเฉลี่ยของราคาหนังสือทั้งหมด
 
 ```
 topComputerBooks %>% filter(Price > mean(Price))
@@ -131,7 +131,7 @@ Result:
 
 - mean() คือคำสั่งหาค่าเฉลี่ยของชุดข้อมูลที่เป็นตัวเลข หากต้องการหาข้อมูลที่มีค่ามากกว่าค่า mean ของข้อมูลชุดนั้น ๆ ให้ทำการ filter ค่า price ที่มีค่า Price ที่มีค่ามากกว่า ค่าเฉลี่ยของตัว Price เอง
 
-4. ค่า Index ของหนังสือที่มีคำว่า "Machine" อยู่ใน Description
+### 4. ค่า Index ของหนังสือที่มีคำว่า "Machine" อยู่ใน Description
 
 ```
 result <- grep("[mM]achine", topComputerBooks$Description)
@@ -148,7 +148,7 @@ Result:
 - เนื่องจากคำว่า "Machine" จะมีทั้งตัวอักษร m (เล็ก) และ M (ใหญ่) จึงใส่วงเล็บก้ามปู ([]) ไว้และใส่ตัวอักษรที่เป็นไปได้ทั้งตัวเล็กและตัวใหญ่ เช่น [C]at เป็นต้น
 - คำสั่ง grep() มีหน้าที่ในการ จับคู่นิพจน์ต่าง ๆ ที่เหมือนกันใน Vector นั้น ๆ โดยจะ return ค่าเป็น index ทั้งหมดของ String ที่เจอจากการค้นหาจากคำสั่งนี้
 
-5. จำนวนของชื่อหนังสือ ที่มีคำว่า "Network" อยู่ในชื่อหนังสือ
+### 5. จำนวนของชื่อหนังสือ ที่มีคำว่า "Network" อยู่ในชื่อหนังสือ
 
 ```
 result2 <- grep("[nN]etwork", topComputerBooks$Book_title)
@@ -166,7 +166,7 @@ Result:
 - คำสั่ง grep() มีหน้าที่ในการ จับคู่นิพจน์ต่าง ๆ ที่เหมือนกันใน Vector นั้น ๆ โดยจะ return ค่าเป็น index ทั้งหมดของ String ที่เจอจากการค้นหาจากคำสั่งนี้
 - เนื่องจาก grep() นั้นจะ return ค่าออกมาเป็น index เนื่องจากเราต้องการจำนวนของ index ทั้งหมดที่เราต้องการ จึงใช้ length() ในการหาจำนวนทั้งหมดของ index นั่นเอง
 
-6. คะแนน Rating ที่ต่ำที่สุดของหนังสือในแต่ละ Type
+### 6. คะแนน Rating ที่ต่ำที่สุดของหนังสือในแต่ละ Type
 
 ```
 topComputerBooks %>% group_by(Type) %>% summarise(Worst_Rating = min(Rating))
