@@ -4,7 +4,7 @@ Created by Napasorn Patanadecha (ID: 63130500063)
 
 ## Choose Dataset:
 
-2. Superstore Sales Dataset (Data from Rohit Sahoo,[Kaggle](https://www.kaggle.com/rohitsahoo/sales-forecasting)) >> [Using CSV](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/superstore_sales.csv)
+1. Top 270 Computer Science / Programing Books (Data from Thomas Konstantin, [Kaggle](https://www.kaggle.com/thomaskonstantin/top-270-rated-computer-science-programing-books)) >> [Using CSV](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv)
 
 ### What you need to do:
 
@@ -51,7 +51,7 @@ $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14
 ซึ่งในชุดข้อมูลนี้มี จำนวน 271 Rows และ 7 Columns
 
 * Rating : คะแนนความนิยมของหนังสือแต่ละเล่ม
-* Reviews : จำรวรความคิดเห็นของผู้อ่าน
+* Reviews : จำนวนความคิดเห็นของผู้อ่าน
 * Book_title : ชื่อของหนังสือ
 * Description : คำอธิบายของหนังสือ
 * Number_Of_Pages : จำนวนหน้าทั้งหมดของหนังสือ
@@ -252,9 +252,10 @@ topbook %>% filter(Rating > "4.5") %>% select(Reviews,Book_title,Rating) %>% arr
 ```r
 topbook %>% ggplot(aes(x=Type)) + geom_bar() + ggtitle("Number of type book")
 ```
-![Graph1]()
+![Graph1](https://github.com/sit-2021-int214/016_Heart-Attack-Analysis-Prediction-Dataset/blob/cd6626f2505bf66a61905f01dd98e9e2be539694/assignment/HW04_63130500079/Graph/Graph1.png)
 ### 2.กราฟความสัมพันธ์เรทติ้งและราคาของหนังสือที่มีคนรีวิวมากที่สุด 5 อันดับแรก
 ```r
 topbook %>% arrange(desc(Reviews)) %>% head(n=10) %>% ggplot(aes(x=Price,y=Rating))+ geom_point() +
   geom_point(aes(color=Reviews))+ ggtitle("Rating and Price of Top 10 book have most reviewer") + geom_smooth(method="lm")
 ```
+![Graph2](https://github.com/sit-2021-int214/016_Heart-Attack-Analysis-Prediction-Dataset/blob/cd6626f2505bf66a61905f01dd98e9e2be539694/assignment/HW04_63130500079/Graph/Graph2.png)
