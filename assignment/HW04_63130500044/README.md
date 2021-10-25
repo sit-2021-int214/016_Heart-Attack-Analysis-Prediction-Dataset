@@ -70,30 +70,9 @@ $ Sales         <dbl> 261.9600, 731.9400, 14.6200, 957.5775, 22.3680, 48.8600, 7
 - Product.Name : ชื่อสินค้า
 - Sales : ราคา
 
-### 2. จงหาข้อมูลการซื้อของลูกค้าที่อยู่ในเมือง New York City
+## Part 2: Learning function from Tidyverse
 
+- Function `select()` from package [dplyr](https://dplyr.tidyverse.org/reference/select.html). : เลือกเฉพาะคอมลัมน์ที่เราต้องการให้แสดงผลออกมา
 ```
-NY_Customer <- Superstore_Sales %>% select(`Customer Name`, City, `Product Name`) %>% filter(City == "New York City");
-
-as_tibble(NY_Customer);
-
+topComBooks %>% select(Book_title,Price,Rating)
 ```
-Result :
-
-```
-
- `Customer Name`   City          `Product Name`                                                                        
-   <chr>             <chr>         <chr>                                                                                 
- 1 Janet Molinari    New York City Advantus Push Pins                                                                    
- 2 Janet Molinari    New York City AT&T CL83451 4-Handset Telephone                                                      
- 3 Henry MacAllister New York City Avery Binding System Hidden Tab Executive Style Index Sets                            
- 4 Parhena Norris    New York City 9-3/4 Diameter Round Wall Clock                                                       
- 5 Cynthia Voltz     New York City Magnifier Swing Arm Lamp                                                              
- 6 Jim Kriz          New York City Sanford Colorific Eraseable Coloring Pencils, 12 Count                                
- 7 Mark Packer       New York City Atlantic Metals Mobile 4-Shelf Bookcases, Custom Colors                               
- 8 Mark Packer       New York City I Need's 3d Hello Kitty Hybrid Silicone Case Cover for HTC One X 4g with 3d Hello Kit~
- 9 Mark Packer       New York City Xerox 205                                                                             
-10 Mark Packer       New York City Atlantic Metals Mobile 3-Shelf Bookcases, Custom Colors                               
-# ... with 881 more rows
-```
-นี่คือข้อมูลของลูกค้าที่อยู่ในเมือง New York City
