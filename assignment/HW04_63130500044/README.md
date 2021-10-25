@@ -203,7 +203,7 @@ PlotSC + ggtitle("Number of Sales Sub Category") + xlab("Sub.Category") + ylab("
 ```
 Result :
 ```
-
+![Graph 1](Rplot.png)
 ```
 ### 2. กราฟแสดงจำนวนการซื้อของสินค้าประเภทย่อย อันดับแรกที่มากที่สุด
 ```
@@ -216,5 +216,5 @@ PlotSCNumber + scale_fill_manual(values = c("#999999","#E69F00","#56B4E9"))
 ```
 Result :
 ```
-
+![Graph 2](Rplot2.png)
 ```
