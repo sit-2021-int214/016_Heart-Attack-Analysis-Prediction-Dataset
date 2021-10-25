@@ -99,6 +99,11 @@ Result:
 10 What Is Life? with Mind and Matter and Autobiographical Sketches                        184  21.9
 # ... with 56 more rows
 ```
+//Explain
+
+- arrange() จะเป็นการเรียงลำดับ โดย default จะเป็นการเรียงค่าจากน้อยไปมาก
+- ตั้งเงื่อนไขของ Number_Of_Pages โดยให้มีค่าอยู่ระหว่าง มากกว่า 150 และ น้อยกว่า 300
+
 3. หนังสือมีราคามากกว่าค่าเฉลี่ยของราคาหนังสือทั้งหมด
 
 ```
@@ -122,21 +127,11 @@ Result:
 10   4.46     164 Structure and Interpretation of C~ "There are new implementations of most ~             657 Hardc~  58.9
 # ... with 95 more rows
 ```
+//Explain
 
-4. ค่า Index ของหนังสือที่มีคำว่า "Machine" อยู่ใน De
+- mean() คือคำสั่งหาค่าเฉลี่ยของชุดข้อมูลที่เป็นตัวเลข หากต้องการหาข้อมูลที่มีค่ามากกว่าค่า mean ของข้อมูลชุดนั้น ๆ ให้ทำการ filter ค่า price ที่มีค่า Price ที่มีค่ามากกว่า ค่าเฉลี่ยของตัว Price เอง
 
-```
-result <- grep("[mM]achine", topComputerBooks$Description)
-print(result)
-```
-
-Result:
-
-```
-[1]  12  14  27  29  43 119 122 129 223 229 255 257
-```
-
-5. ค่า Index ของหนังสือที่มีคำว่า "Machine" อยู่ใน De
+4. ค่า Index ของหนังสือที่มีคำว่า "Machine" อยู่ใน Description
 
 ```
 result <- grep("[mM]achine", topComputerBooks$Description)
@@ -148,6 +143,51 @@ Result:
 ```
 [1]  12  14  27  29  43 119 122 129 223 229 255 257
 ```
+//Explain
+
+- เนื่องจากคำว่า "Machine" จะมีทั้งตัวอักษร m (เล็ก) และ M (ใหญ่) จึงใส่วงเล็บก้ามปู ([]) ไว้และใส่ตัวอักษรที่เป็นไปได้ทั้งตัวเล็กและตัวใหญ่ เช่น [C]at เป็นต้น
+- คำสั่ง grep() มีหน้าที่ในการ จับคู่นิพจน์ต่าง ๆ ที่เหมือนกันใน Vector นั้น ๆ โดยจะ return ค่าเป็น index ทั้งหมดของ String ที่เจอจากการค้นหาจากคำสั่งนี้
+
+5. จำนวนของชื่อหนังสือ ที่มีคำว่า "Network" อยู่ในชื่อหนังสือ
+
+```
+result2 <- grep("[nN]etwork", topComputerBooks$Book_title)
+length(result2)
+```
+
+Result:
+
+```
+> length(result2)
+[1] 4
+```
+//Explain
+
+- คำสั่ง grep() มีหน้าที่ในการ จับคู่นิพจน์ต่าง ๆ ที่เหมือนกันใน Vector นั้น ๆ โดยจะ return ค่าเป็น index ทั้งหมดของ String ที่เจอจากการค้นหาจากคำสั่งนี้
+- เนื่องจาก grep() นั้นจะ return ค่าออกมาเป็น index เนื่องจากเราต้องการจำนวนของ index ทั้งหมดที่เราต้องการ จึงใช้ length() ในการหาจำนวนทั้งหมดของ index นั่นเอง
+
+6. คะแนน Rating ที่ต่ำที่สุดของหนังสือในแต่ละ Type
+
+```
+topComputerBooks %>% group_by(Type) %>% summarise(Worst_Rating = min(Rating))
+```
+
+Result:
+
+```
+  Type                  Worst_Rating
+  <chr>                        <dbl>
+1 Boxed Set - Hardcover         4.49
+2 ebook                         3.91
+3 Hardcover                     3.45
+4 Kindle Edition                3.33
+5 Paperback                     3   
+6 Unknown Binding               3.87
+```
+//Explain
+
+- ใช้ group_by ในการจัดกลุ่มของ Type ของหนังสือทั้งหมด
+- ใช้ summarise ในการค้นหา Rating ที่ต่ำที่สุดของหนังสือในแต่ละ type โดยหาค่า min ของ Rating
 
 ## Part 4: Visualization with GGplot2
 ### 1.) Graph show relation between height and mass
