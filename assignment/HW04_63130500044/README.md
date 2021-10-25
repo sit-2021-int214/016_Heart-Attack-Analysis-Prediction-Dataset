@@ -97,4 +97,4 @@ Result:
 # … with 9,790 more rows
 ```
 
-##Part 3: Transform data with dplyr and finding insight the data
+## Part 3: Transform data with dplyr and finding insight the data
