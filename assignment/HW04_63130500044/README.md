@@ -14,5 +14,16 @@ Superstore Sales Dataset (Data from Rohit Sahoo,[Kaggle](https://www.kaggle.com/
 ## Part 1: Explore the dataset
 
 ```
-  
+library(dplyr)
+library(stringr)
+library(readr)
+library(assertive)
+library(tidyr)
+library(ggplot2)
+
+#DataSet
+superstore_sale <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/superstore_sales.csv")
+
+View(superstore_sale)
+
 ```
