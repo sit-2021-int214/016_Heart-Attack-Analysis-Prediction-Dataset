@@ -61,7 +61,8 @@ topbook %>% filter(Rating > "4.5") %>% select(Reviews,Book_title,Rating) %>% arr
 
 #Part4
 #4.1
-topbook %>% filter(Rating > "4.5") %>% ggplot(aes(x=Rating)) + geom_bar() + ggtitle("Number of type book")
+topbook %>% ggplot(aes(x=Type)) + geom_bar() + ggtitle("Number of type book")
+#4.2
+topbook %>% arrange(desc(Reviews)) %>% head(n=10) %>% ggplot(aes(x=Price,y=Rating))+ geom_point() +
+  geom_point(aes(color=Reviews))+ ggtitle("Rating and Price of Top 10 book have most reviewer") + geom_smooth(method="lm")
 
-topbook %>% arrange(desc(Reviews)) %>% head(n=5) %>% ggplot(aes(x=Price,y=Rating))+ geom_point() +
-  geom_point(aes(color=Type))+ ggtitle("Relation between Rating and Price of book 4.5 Star+") + geom_smooth(method="lm")
