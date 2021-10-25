@@ -204,7 +204,7 @@ PlotSC + ggtitle("Number of Sales Sub Category") + xlab("Sub.Category") + ylab("
 Result :
 ![Graph 1](Rplot.png)
 
-### 2. กราฟแสดงจำนวนการซื้อของสินค้าประเภทย่อย อันดับแรกที่มากที่สุด
+### 2. กราฟแสดงจำนวนการซื้อของสินค้าประเภทย่อย ที่มรการซื้อมากที่สุด 3 อันดับแรก
 ```
 SubCategory <- superstore_sale %>% select(Sub.Category) %>% count(Sub.Category) %>% arrange(desc(n)) %>% head(3)
 
