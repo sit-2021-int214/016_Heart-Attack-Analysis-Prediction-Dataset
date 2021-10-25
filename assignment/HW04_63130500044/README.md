@@ -211,7 +211,7 @@ SubCategory <- superstore_sale %>% select(Sub.Category) %>% count(Sub.Category) 
 PlotSCNumber <- ggplot(SubCategory , aes(x = SubCategory$Sub.Category , y = SubCategory$n , fill = SubCategory$Sub.Category)) + 
   geom_bar(stat = "identity") + theme_minimal()
 
-PlotSCNumber + scale_fill_manual(values = c("#999999","#E69F00","#56B4E9"))
+PlotSCNumber + scale_fill_manual(values = c("#999999","#E69F00","#56B4E9")) + ggtitle("Total of Sub Category") + xlab("Sub Category") + ylab("Total Number")
 ```
 Result :
 ![Graph 2](Rplot2.png)
