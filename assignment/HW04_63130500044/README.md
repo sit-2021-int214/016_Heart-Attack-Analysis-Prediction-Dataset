@@ -24,7 +24,7 @@ library(ggplot2)
 #DataSet
 superstore_sale <- read.csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/superstore_sales.csv")
 
-View(superstore_sale)
+glimpse(superstore_sale)
 
 ```
 ข้อมูลใน Dataset
