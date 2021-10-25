@@ -194,3 +194,5 @@ Result :
 2       Furniture 2078
 3      Technology 1813
 ```
+
+## Part 4: Visualization with GGplot2
