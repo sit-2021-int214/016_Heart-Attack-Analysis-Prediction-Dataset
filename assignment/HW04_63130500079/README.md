@@ -252,9 +252,10 @@ topbook %>% filter(Rating > "4.5") %>% select(Reviews,Book_title,Rating) %>% arr
 ```r
 topbook %>% ggplot(aes(x=Type)) + geom_bar() + ggtitle("Number of type book")
 ```
-![Graph1]()
+![Graph1](assignment/HW04_63130500079/Graph/Graph1.png)
 ### 2.กราฟความสัมพันธ์เรทติ้งและราคาของหนังสือที่มีคนรีวิวมากที่สุด 5 อันดับแรก
 ```r
 topbook %>% arrange(desc(Reviews)) %>% head(n=10) %>% ggplot(aes(x=Price,y=Rating))+ geom_point() +
   geom_point(aes(color=Reviews))+ ggtitle("Rating and Price of Top 10 book have most reviewer") + geom_smooth(method="lm")
 ```
+![Graph2](assignment/HW04_63130500079/Graph/Graph2.png)
