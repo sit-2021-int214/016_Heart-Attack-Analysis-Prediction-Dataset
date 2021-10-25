@@ -151,7 +151,9 @@ Result:
 5 Hardcover                95
 6 Paperback               156
 ```
-
+Explain: <br>
+- ขั้นตอนแรกทำการ Count จำนวนของแต่ละชนิด
+- และกำหนดให้เรียงจากน้อยไปมาก โดยใช้คำสั่ง arrange
 
 ### 2.  หนังสือที่มีราคาถูกที่สุด
 ```
@@ -163,10 +165,11 @@ Result :
    <dbl>   <dbl> <chr>                           <dbl> <chr>     <dbl>
 1   4.17    3829 The Elements of Style             105 Hardcover  9.32
 ```
-
+Explain: <br>
+- ทำการเลือกทุกคอลัมน์ ยกเว้น Description
+- กำหนดเงื่อนไขว่าให้เลือกเฉพาะหนังสือที่มีราคาน้อยที่สุด โดยใช้คำสั่ง filter
 
 ### 3. ค่าเฉลี่ยราคาของหนังสือในแต่ละประเภท
-
 ```
 topComBooks%>% group_by(Type) %>% summarise(mean_price = mean(Price))
 ```
@@ -181,7 +184,9 @@ Result :
 5 Paperback                   45.8
 6 Unknown Binding             37.2
 ```
-
+Explain: <br>
+- ทำการจัดกลุ่มตามประเภทหนังสือ โดยใช้คำสั่ง group_by
+- ทำการสรุปข้อมูลให้คอลัมน์ mean_price คือ คอลัมน์ที่สรุปราคาโดยเฉลี่ยของแต่ละประเภท โดยใช้คำสั่ง summarise
 
 ### 4.  ราคาของ 10 อันดับหนังสือที่มี Rating ดีที่สุด
 ```
@@ -202,6 +207,10 @@ Result :
  9 The Elements of Computing Systems: Building a Modern Computer from First Principles                        4.54  41.3
 10 Practical Object Oriented Design in Ruby                                                                   4.54  50.1
 ```
+Explain: <br>
+- ทำการเลือกคอลัมน์ Book_title Rating และ Price โดยใช้คำสั่ง select
+- เรียงข้อมูลตาม Rating จากมากไปน้อย โดยใช้คำสั่ง arrange
+- กำหนดว่าให้เอาผลลัพท์แค่ 10 rows โดยใช้คำสั่ง head
 
 ### 5. 5 อันดับหนังสือที่มีราคาน้อยกว่าค่าเฉลี่ยของราคาหนังสือทุกเล่ม
 ```
@@ -217,7 +226,11 @@ Result :
 4 Quantum Computing Since Democritus                                                              52.9
 5 Continuous Delivery: Reliable Software Releases Through Build, Test, and Deployment Automation  52.5
 ```
-
+Explain: <br>
+- กำหนดเงื่อนไขว่าข้อมูลที่นำมาจะต้องมีราคาน้อยกว่าค่าเฉลี่ยของราคาโดยทั่วไป โดยใช้คำสั่ง filter
+- กำหนดคอลัมน์ Book_title, Price โดยใช้คำสั่ง select
+- เรียงข้อมูลจากมากไปน้อยตามราคา โดยใช้คำสั่ง arrange
+- กำหนด rows จำนวน 5 rows โดยใช้คำสั่ง head
 
 ### 6. หนังสือที่มีการ Reviews มากกว่า 1000 โดยเรียงจากมากไปน้อย
 ```
@@ -241,6 +254,10 @@ Result :
 12    1255 Superintelligence: Paths, Dangers, Strategies                                             15.7 
 13    1035 Chaos: Making a New Science                                                               25.7 
 ```
+Explain: <br>
+- กำหนดเงื่อนไขว่าข้อมูลที่ต้องการคือต้องมี Reviews มากกว่า 1000 ครั้ง โดยใช้คำสั่ง filter
+- กำหนดคอลัมน์ Reviews, Book_title, Price โดยใช้คำสั่ง select
+- เรียงข้อมูลจากมากไปน้อยตาม Reviews โดยใช้คำสั่ง arrange
 
 ## Part 4: Visualization with GGplot2
 ### 1. ข้อมูลแต่ละประเภทของหนังสือ มีจำนวนเท่าไหร่
@@ -249,7 +266,8 @@ topComBooks %>% ggplot(aes(x=Type)) + geom_bar() + ggtitle("Number of type book"
 ```
 Result:
 ![Graph 1](Garph1.jpg)
-
+Explain: <br>
+เป็นแผนภูมิที่แสดงถึง จำนวนหนังสือในแต่ละประเภทโดย ประเภทที่มีมากที่สุดคือ Paperback ประเภทที่น้อยที่สุดคือ Boxed Set - Hard cover
 
 
 ### 2. กราฟแสดงความสัมพันธ์ระหว่าง Rating และ Price ที่ต่ำกว่าค่าเฉลี่ย
@@ -259,5 +277,7 @@ topComBooks %>% filter(Price < mean(Price)) %>% ggplot(aes(x=Price,y=Rating))+ g
 ```
 Result:
 ![Graph 2](Garph2.jpg)
+Explain: <br>
+เป็นกราฟที่แสดงถึงความสัมพันธ์ระหว่างราคาและ Rating โดยแยกตามแต่ละประเภทของหนังสือ ข้อมูลส่วนใหญ่จะกระจาย
 
 
