@@ -199,10 +199,6 @@ scat_plot+geom_smooth()
 ```
 Result:
 
-![Graph 1](graph1.png)
+![Graph 1](graph_1.png)
 
-**Guideline:
-Embed Image by using this syntax in markdown file
-````
-![Name](imageFile)
-````
+
