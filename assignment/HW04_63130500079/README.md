@@ -1,6 +1,6 @@
 # R-Assignment 4
 
-Created by Napasorn Patanadecha (ID: 63130500063)
+Created by Preeyathorn Chaiyakum (ID: 63130500079)
 
 ## Choose Dataset:
 
