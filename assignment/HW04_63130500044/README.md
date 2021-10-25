@@ -72,7 +72,27 @@ $ Sales         <dbl> 261.9600, 731.9400, 14.6200, 957.5775, 22.3680, 48.8600, 7
 
 ## Part 2: Learning function from Tidyverse
 
-- Function `select()` from package [dplyr](https://dplyr.tidyverse.org/reference/select.html). : เลือกเฉพาะคอมลัมน์ที่เราต้องการให้แสดงผลออกมา
+- Function `select()` from package [dplyr](https://dplyr.tidyverse.org/reference/select.html). : เลือกคอมลัมน์ที่เราต้องการให้แสดงผลออกมา
+
 ```
-topComBooks %>% select(Book_title,Price,Rating)
+Select_Customer <- superstore_sale %>% select(`Customer.ID` , `Customer.Name` , Sales , City) 
+
+as_tibble(Select_Customer)
+```
+Result:
+```
+# A tibble: 9,800 × 4
+   Customer.ID Customer.Name    Sales City           
+   <chr>       <chr>            <dbl> <chr>          
+ 1 CG-12520    Claire Gute     262.   Henderson      
+ 2 CG-12520    Claire Gute     732.   Henderson      
+ 3 DV-13045    Darrin Van Huff  14.6  Los Angeles    
+ 4 SO-20335    Sean O'Donnell  958.   Fort Lauderdale
+ 5 SO-20335    Sean O'Donnell   22.4  Fort Lauderdale
+ 6 BH-11710    Brosina Hoffman  48.9  Los Angeles    
+ 7 BH-11710    Brosina Hoffman   7.28 Los Angeles    
+ 8 BH-11710    Brosina Hoffman 907.   Los Angeles    
+ 9 BH-11710    Brosina Hoffman  18.5  Los Angeles    
+10 BH-11710    Brosina Hoffman 115.   Los Angeles    
+# … with 9,790 more rows
 ```
