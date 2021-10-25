@@ -190,7 +190,7 @@ Result:
 - ใช้ summarise ในการค้นหา Rating ที่ต่ำที่สุดของหนังสือในแต่ละ type โดยหาค่า min ของ Rating
 
 ## Part 4: Visualization with GGplot2
-### 1.) Graph show relation between height and mass
+### 1.) Graph show relations between number of pages and price
 ```
 scat_plot <- starwars %>% filter(mass<500) %>% ggplot(aes(x=height,y=mass))+
   geom_point(aes(color=gender))
