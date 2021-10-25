@@ -202,9 +202,8 @@ PlotSC <- ggplot(superstore_sale , aes(x= Sub.Category)) + geom_bar() + theme_mi
 PlotSC + ggtitle("Number of Sales Sub Category") + xlab("Sub.Category") + ylab("Sales")
 ```
 Result :
-```
 ![Graph 1](Rplot.png)
-```
+
 ### 2. กราฟแสดงจำนวนการซื้อของสินค้าประเภทย่อย อันดับแรกที่มากที่สุด
 ```
 SubCategory <- superstore_sale %>% select(Sub.Category) %>% count(Sub.Category) %>% arrange(desc(n)) %>% head(3)
@@ -215,6 +214,4 @@ PlotSCNumber <- ggplot(SubCategory , aes(x = SubCategory$Sub.Category , y = SubC
 PlotSCNumber + scale_fill_manual(values = c("#999999","#E69F00","#56B4E9"))
 ```
 Result :
-```
 ![Graph 2](Rplot2.png)
-```
