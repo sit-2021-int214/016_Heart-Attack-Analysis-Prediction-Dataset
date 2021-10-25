@@ -255,5 +255,6 @@ topbook %>% ggplot(aes(x=Type)) + geom_bar() + ggtitle("Number of type book")
 ![Graph1]()
 ### 2.กราฟความสัมพันธ์เรทติ้งและราคาของหนังสือที่มีคนรีวิวมากที่สุด 5 อันดับแรก
 ```r
-
+topbook %>% arrange(desc(Reviews)) %>% head(n=10) %>% ggplot(aes(x=Price,y=Rating))+ geom_point() +
+  geom_point(aes(color=Reviews))+ ggtitle("Rating and Price of Top 10 book have most reviewer") + geom_smooth(method="lm")
 ```
