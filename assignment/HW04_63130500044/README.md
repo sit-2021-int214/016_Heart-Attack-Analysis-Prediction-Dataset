@@ -100,9 +100,27 @@ Result:
 ## Part 3: Transform data with dplyr and finding insight the data
 ### 1. หาลูกค้าที่ซื้อราคาสินค้ามากกว่าค่าเฉลี่ย และอยู่ในเมือง Henderson  โดยให้แสดง CustomerID , CustomerName , Sales , City
 ```
-
+superstore_sale %>% select(`Customer.ID` , `Customer.Name` , Sales , City) %>% 
+  filter(Sales >= mean(Sales) , City == "Henderson")
 ```
 Result :
 ```
-
+   Customer.ID    Customer.Name   Sales      City
+1     CG-12520      Claire Gute  261.96 Henderson
+2     CG-12520      Claire Gute  731.94 Henderson
+3     DK-12985   Darren Koutras  283.92 Henderson
+4     KC-16255   Karen Carlisle  364.80 Henderson
+5     AB-10105    Adrian Barton  821.88 Henderson
+6     DB-12910      Daniel Byrd  671.93 Henderson
+7     AP-10915   Arthur Prichep  842.94 Henderson
+8     TB-21175    Thomas Boland  975.92 Henderson
+9     TB-21175    Thomas Boland 2249.91 Henderson
+10    LW-16990 Lindsay Williams 1685.88 Henderson
+11    ME-17320    Maria Etezadi 2573.82 Henderson
+12    ME-17320    Maria Etezadi  609.98 Henderson
+13    ME-17320    Maria Etezadi  391.98 Henderson
+14    ME-17320    Maria Etezadi  755.96 Henderson
+15    DB-13555  Dorothy Badders  828.84 Henderson
+16    GW-14605 Giulietta Weimer  318.08 Henderson
+17    AH-10210       Alan Hwang 1577.94 Henderson
 ```
