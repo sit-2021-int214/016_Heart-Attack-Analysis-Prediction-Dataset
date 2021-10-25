@@ -50,3 +50,22 @@ $ Sub.Category  <chr> "Bookcases", "Chairs", "Labels", "Tables", "Storage", "Fur
 $ Product.Name  <chr> "Bush Somerset Collection Bookcase", "Hon Deluxe Fabric Upholstered Stacking Chairs, Rounded Back", "…
 $ Sales         <dbl> 261.9600, 731.9400, 14.6200, 957.5775, 22.3680, 48.8600, 7.2800, 907.1520, 18.5040, 114.9000, 1706.18…
 ```
+ภายใน dataset ประกอบไปด้วยข้อมูลจำนวน 9,800 Row และ 18 Columns โดยที่
+- Row.ID : ลำดับ
+- Order.ID : ID ของ Order 
+- Order.Date : วันที่สั่ง
+- Ship.Date : วันส่งของ
+- Ship.Mode : ส่งโดยแบบใด
+- Customer.ID : ID ลูกค้า
+- Customer.Name : ชื่อลูกค้า
+- Segment : สั่งในนาม
+- Country : ประเทศ
+- City : เมือง
+- State : สถานะ
+- Postal.Code : เลขไปรษณีย์
+- Region : 	ภูมิภาค
+- Product.ID : ID ของสินค้า
+- Category : ประเภทของสินค้า
+- Sub.Category : ประเภทย่อย
+- Product.Name : ชื่อสินค้า
+- Sales : ราคา
