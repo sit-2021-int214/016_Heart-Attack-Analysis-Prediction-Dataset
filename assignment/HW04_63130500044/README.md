@@ -196,3 +196,25 @@ Result :
 ```
 
 ## Part 4: Visualization with GGplot2
+### 1. กราฟแสดงราคาของสินค้าประเภทย่อย
+```
+PlotSC <- ggplot(superstore_sale , aes(x= Sub.Category)) + geom_bar() + theme_minimal()
+PlotSC + ggtitle("Number of Sales Sub Category") + xlab("Sub.Category") + ylab("Sales")
+```
+Result :
+```
+
+```
+### 2. กราฟแสดงจำนวนการซื้อของสินค้าประเภทย่อย อันดับแรกที่มากที่สุด
+```
+SubCategory <- superstore_sale %>% select(Sub.Category) %>% count(Sub.Category) %>% arrange(desc(n)) %>% head(3)
+
+PlotSCNumber <- ggplot(SubCategory , aes(x = SubCategory$Sub.Category , y = SubCategory$n , fill = SubCategory$Sub.Category)) + 
+  geom_bar(stat = "identity") + theme_minimal()
+
+PlotSCNumber + scale_fill_manual(values = c("#999999","#E69F00","#56B4E9"))
+```
+Result :
+```
+
+```
