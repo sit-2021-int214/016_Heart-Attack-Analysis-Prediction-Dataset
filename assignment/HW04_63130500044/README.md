@@ -124,47 +124,73 @@ Result :
 16    GW-14605 Giulietta Weimer  318.08 Henderson
 17    AH-10210       Alan Hwang 1577.94 Henderson
 ```
-### 2. 
+### 2. แสดงจำนวนคนสั่งของในแต่ละเมือง
 ```
-
-```
-Result :
-```
-
-```
-
-### 3. 
-```
-
+superstore_sale %>% group_by(City) %>% summarise("total" = length(City))
 ```
 Result :
 ```
-
+# A tibble: 529 × 2
+   City        total
+   <chr>       <int>
+ 1 Aberdeen        1
+ 2 Abilene         1
+ 3 Akron          20
+ 4 Albuquerque    14
+ 5 Alexandria     16
+ 6 Allen           4
+ 7 Allentown       7
+ 8 Altoona         2
+ 9 Amarillo       10
+10 Anaheim        19
+# … with 519 more rows
 ```
 
-### 4. 
+### 3.แสดง IDและชื่อ ของสินค้าที่มีราคาถูกที่สุดที่ลูกค้าได้ซื้อไป
 ```
-
+superstore_sale %>% select(Product.ID , Product.Name , Sales) %>% filter(Sales == min(Sales))
 ```
 Result :
 ```
-
+       Product.ID                                                               Product.Name Sales
+1 OFF-AP-10002906 Hoover Replacement Belt for Commercial Guardsman Heavy-Duty Upright Vacuum 0.444
 ```
 
-### 5. 
+### 4. 5 อันดับลูดค้าที่ซื้อสินค้ามากที่สุด (แสดง ID ชื่อ) 
 ```
-
+superstore_sale %>% select(Customer.ID , Customer.Name) %>% group_by(Customer.Name) %>% count(Customer.ID) %>% arrange(desc(n)) %>% head(5) 
 ```
 Result :
 ```
-
+# A tibble: 5 × 3
+# Groups:   Customer.Name [5]
+  Customer.Name       Customer.ID     n
+  <chr>               <chr>       <int>
+1 William Brown       WB-21850       35
+2 Matt Abelman        MA-17560       34
+3 Paul Prost          PP-18955       34
+4 John Lee            JL-15835       33
+5 Chloris Kastensmidt CK-12205       32
 ```
 
-### 6. 
+### 5. หาสินค้าประเภทย่อยที่ถูกซื้อไปมากที่สุด
 ```
-
+superstore_sale %>% select(Sub.Category) %>% count(Sub.Category) %>% arrange(desc(n)) %>% head(1)
 ```
 Result :
 ```
+  Sub.Category    n
+1      Binders 1492
+```
 
+### 6. ในหมวดของประเภทสินค้าที่มีคนซื้อ เรียงลำดับจากมากไปน้อย
+```
+superstore_sale %>% select(Category) %>% count(Category) %>% arrange(desc(n))
+```
+Result :
+```
+         Category    n
+1 Office Supplies 5909
+2       Furniture 2078
+3      Technology 1813
 ```
