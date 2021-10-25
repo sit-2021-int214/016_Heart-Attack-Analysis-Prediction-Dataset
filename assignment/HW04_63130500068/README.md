@@ -201,4 +201,13 @@ Result:
 
 ![Graph 1](graph_1.png)
 
+### 2.) Graph show the number from each type of books
+```
+ggplot(data = topComputerBooks) + geom_bar(mapping = aes(x = Type, fill = Type)) + 
+  ggtitle("Number of each type of books")
+```
+Result:
+
+![Graph 2](graph_2.png)
+
 
