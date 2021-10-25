@@ -124,3 +124,47 @@ Result :
 16    GW-14605 Giulietta Weimer  318.08 Henderson
 17    AH-10210       Alan Hwang 1577.94 Henderson
 ```
+### 2. 
+```
+
+```
+Result :
+```
+
+```
+
+### 3. 
+```
+
+```
+Result :
+```
+
+```
+
+### 4. 
+```
+
+```
+Result :
+```
+
+```
+
+### 5. 
+```
+
+```
+Result :
+```
+
+```
+
+### 6. 
+```
+
+```
+Result :
+```
+
+```
