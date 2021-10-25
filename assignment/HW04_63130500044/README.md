@@ -98,3 +98,11 @@ Result:
 ```
 
 ## Part 3: Transform data with dplyr and finding insight the data
+### 1. หาลูกค้าที่ซื้อราคาสินค้ามากกว่าค่าเฉลี่ย และอยู่ในเมือง Henderson  โดยให้แสดง CustomerID , CustomerName , Sales , City
+```
+
+```
+Result :
+```
+
+```
