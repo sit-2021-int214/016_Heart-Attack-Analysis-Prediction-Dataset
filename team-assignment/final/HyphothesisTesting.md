@@ -65,7 +65,7 @@ cri <- qt(alpha, n-1, lower.tail = FALSE)
 #### Result
 ``` r
 > p_value_thalach
-   8.845216e-16
+   8.85
 > cri
    1.649915
 ```
@@ -90,7 +90,7 @@ if(t_thalach>=cri){
 #### Result
 ``` r
 #with p-value
-   reject H0
+   accept H0
 #with critical-value
    accept H0
 ```
