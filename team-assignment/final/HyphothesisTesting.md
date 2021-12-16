@@ -79,8 +79,6 @@ if(p_value_thalach<=alpha){
   print("accept H0")
 }
 
-#reject H0
-
 #with critical-value
 if(t_thalach>=cri){
   print("reject H0")
@@ -88,7 +86,6 @@ if(t_thalach>=cri){
   print("accept H0")
 }
 
-#accept H0
 ```
 #### Result
 ``` r
