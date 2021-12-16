@@ -45,6 +45,7 @@ Heart Attack Analysis Prediction Dataset เป็นชุดข้อมูล
 1. [Exploratory Data Analysis](./team-assignment/midterm/Data%20Exploration)
 2. [Data Cleaning](./team-assignment/midterm/Cleaning%20Data)
 3. [Define Question and Data Analysis](./team-assignment/midterm)
+4. [Data Visualization](./team-assignment/final/DataVisualization.md)
 
 ## Resources
 
