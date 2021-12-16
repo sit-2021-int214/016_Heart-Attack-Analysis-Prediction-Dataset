@@ -28,9 +28,7 @@
 ``` r
 heart <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/016_Heart-Attack-Analysis-Prediction-Dataset/main/team-assignment/midterm/Cleaning%20Data/heart-attack-cleaning.csv")
 mean <- mean(heart$thalachh) #149.6469
-mean
 sd <- sqrt(var(heart$thalachh)) #22.90516
-sd
 n <- 303
 ```
 ### Step 1 : State the hypothesis
