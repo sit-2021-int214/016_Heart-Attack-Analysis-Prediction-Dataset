@@ -25,15 +25,20 @@
 
 ### Step 0 : Assign variables
 ``` r
-heart <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/016_Heart-Attack-Analysis-Prediction-Dataset/main/team-assignment/midterm/Cleaning%20Data/heart-attack-cleaning.csv")
-mean <- mean(heart$thalachh) #149.6469
-sd <- sqrt(var(heart$thalachh)) #22.90516
+#sampledata
+HeartInTent <- sample_n(heart,10)
+glimpse(carInTent)
+#sampledata
+
+xbar <- mean(HeartInTent$thalachh) # 160.7
+mue0 <- mean(heart$thalachh) #149.6469
+sd_thalachh <- sqrt(var(heart$thalachh))#22.90516
 n <- 303
 ```
 ### Step 1 : State the hypothesis
 ``` r
-Ho : u <= 
-Ha : u >
+Ho : u <= 149.6469
+Ha : u > 149.6469
 ```
 
 ### Step 2 : Select Level of significance
@@ -43,11 +48,11 @@ alpha <- 0.05
 
 ### Step 3 : Select Test statistic
 ```r
-t_thalach <- -1*(mean_thalachh-mue0)/(sd_thalachh/sqrt(n))
+t_thalach <- -1*(xbar-mue0)/(sd_thalachh/sqrt(n)) #-8.399887
 ```
 #### Result
 ``` r
-
+-8.399887
 ```
 ### Step 4 : Finding P-value approach or Critical Value approach
 ```r
@@ -59,6 +64,10 @@ cri <- qt(alpha, n-1, lower.tail = FALSE)
 ```
 #### Result
 ``` r
+> p_value_thalach
+   8.845216e-16
+> cri
+   1.649915
 ```
 
 ### Step 5 : Compare P-value with alpha or t with talpha
@@ -70,7 +79,7 @@ if(p_value_thalach<=alpha){
   print("accept H0")
 }
 
-#accept H0
+#reject H0
 
 #with critical-value
 if(t_thalach>=cri){
