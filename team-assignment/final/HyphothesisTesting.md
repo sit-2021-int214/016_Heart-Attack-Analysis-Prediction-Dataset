@@ -22,7 +22,7 @@
 5. Compare P-value with alpha or z/t with zalpha/talpha
 6. Conclusion
 ## Define question
-
+ผู้ป่วยชายและผู้ป่วยหญิงที่มีอาการเจ็บหน้าอกประเภทหัวใจขาดเลือด มีอัตราการเต้นสูงสุดของหัวใจที่แตกต่างกัน
 
 ### Step 0 : Assign variables
 ``` r
