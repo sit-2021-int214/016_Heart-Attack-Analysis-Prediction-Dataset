@@ -3,10 +3,10 @@
 ### Step to do:
 
 0. Assign variables:
-   - u0 or p0
-   - xbar or pbar
-   - n
-   - sd (or sigma)
+   - u0 or p0 = 
+   - xbar or pbar = 149.6469
+   - n = 303
+   - sd (or sigma) = 22.90516
    - alpha (default is 0.05)
 1. State the hypothesis
 2. Select Level of significance (alpha)
