@@ -25,5 +25,4 @@
 ## Table of Contents
 
 1. <a href="https://github.com/sit-2021-int214/016_Heart-Attack-Analysis-Prediction-Dataset/tree/main/team-assignment/midterm/Data%20Exploration"> Exploratory Data Analysis </a>
-2. 
-3. 
+2. <a href="https://github.com/sit-2021-int214/016_Heart-Attack-Analysis-Prediction-Dataset/tree/main/team-assignment/midterm/Cleaning%20Data"> Cleaning Data </a>
