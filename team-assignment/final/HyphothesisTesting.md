@@ -26,7 +26,11 @@
 
 ### Step 0 : Assign variables
 ``` r
-
+mean <- mean(heart$thalachh) #149.6469
+mean
+sd <- sqrt(var(heart$thalachh)) #22.90516
+sd
+n <- 303
 ```
 ### Step 1 : State the hypothesis
 ``` r
