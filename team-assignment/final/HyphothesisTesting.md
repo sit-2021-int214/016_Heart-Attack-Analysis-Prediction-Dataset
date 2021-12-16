@@ -3,9 +3,8 @@
 ### Step to do:
 
 0. Assign variables:
-   - u0 = 151.125
-   - u1 = 148.84
-   - xbar or pbar = 149.6469
+   - u = 149.5695
+   - xbar or pbar = 156.6
    - n = 303
    - sd (or sigma) = 22.90516
    - alpha (default is 0.05)
