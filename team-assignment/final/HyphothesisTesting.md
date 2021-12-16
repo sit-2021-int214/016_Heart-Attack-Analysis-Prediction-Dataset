@@ -48,7 +48,7 @@ alpha <- 0.05
 
 ### Step 3 : Select Test statistic
 ```r
-t_thalach <- -1*(xbar-mue0)/(sd_thalachh/sqrt(n)) #-8.399887
+t_thalach <- -1*(xbar-mue0)/(sd_thalachh/sqrt(n)) 
 ```
 #### Result
 ``` r
