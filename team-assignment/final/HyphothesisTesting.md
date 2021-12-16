@@ -95,7 +95,7 @@ if(t_thalach>=cri){
 #with p-value
    reject H0
 #with critical-value
-#accept H0
+   accept H0
 ```
 
 ### Step 6 : Conclusion
