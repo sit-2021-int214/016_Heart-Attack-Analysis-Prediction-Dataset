@@ -38,17 +38,24 @@ Ha : u >
 
 ### Step 2 : Select Level of significance
 ``` r
-alpha <- 
+alpha <- 0.05
 ```
 
 ### Step 3 : Select Test statistic
 ```r
+t_thalach <- -1*(mean_thalachh-mue0)/(sd_thalachh/sqrt(n))
 ```
 #### Result
 ``` r
+
 ```
 ### Step 4 : Finding P-value approach or Critical Value approach
 ```r
+# P-value approach
+p_value_thalach <- pt(t_thalach, n-1)
+
+# Critical Value approach
+cri <- qt(alpha, n-1, lower.tail = FALSE)
 ```
 #### Result
 ``` r
@@ -56,6 +63,23 @@ alpha <-
 
 ### Step 5 : Compare P-value with alpha or t with talpha
 ``` r
+#with p-value
+if(p_value_thalach<=alpha){
+  print("reject H0")
+}else{
+  print("accept H0")
+}
+
+#accept H0
+
+#with critical-value
+if(t_thalach>=cri){
+  print("reject H0")
+}else{
+  print("accept H0")
+}
+
+#accept H0
 ```
 
 ### Step 6 : Conclusion
