@@ -26,13 +26,17 @@
 
 ### Step 0 : Assign variables
 ``` r
+
 ```
 ### Step 1 : State the hypothesis
 ``` r
+Ho : u <= 
+Ha : u >
 ```
 
 ### Step 2 : Select Level of significance
 ``` r
+alpha <- 
 ```
 
 ### Step 3 : Select Test statistic
